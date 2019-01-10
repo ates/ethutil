@@ -1,0 +1,5 @@
+{application, ethutil, [
+    {description, "Ethereum utilities"},
+    {vsn, semver},
+    {applications, [kernel, stdlib]}
+]}.

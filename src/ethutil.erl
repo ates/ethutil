@@ -14,6 +14,7 @@ difficulty(Values) ->
     lists:sum(Values) / 100.
 
 -spec blocktime(Timestamps :: [non_neg_integer()]) -> float().
+blocktime([]) -> 0;
 blocktime(Timestamps) ->
     F = fun({Current, Next}, Acc) -> Acc + (Next - Current) end,
     lists:foldl(F, 0, make_timestamp_pair(Timestamps, [])) / length(Timestamps).

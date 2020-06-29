@@ -13,7 +13,7 @@ integer(N) when is_integer(N) -> <<"0x", (integer_to_binary(N, 16))/binary>>.
 difficulty(Values) ->
     lists:sum(Values) / 100.
 
--spec blocktime(Timestamps :: [non_neg_integer()]) -> float().
+-spec blocktime(Timestamps :: [non_neg_integer()]) -> 0 | float().
 blocktime([]) -> 0;
 blocktime(Timestamps) ->
     F = fun({Current, Next}, Acc) -> Acc + (Next - Current) end,
